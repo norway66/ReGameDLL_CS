@@ -1094,7 +1094,7 @@ BOOL EXT_FUNC CBasePlayer::__API_HOOK(TakeDamage)(entvars_t *pevInflictor, entva
 
 						CBasePlayer *pPlayer = GetClassPtr<CCSPlayer>((CBasePlayer *)pEntity->pev);
 						//test last damage amount
-						if (pPlayer->m_iTeam == m_iTeam && flDamage > 0.0f)
+						if (pPlayer->m_iTeam == m_iTeam && int(flDamage) > 1)
 						{
 							ClientPrint(pPlayer->pev, HUD_PRINTTALK, "#Game_teammate_attack", STRING(pAttack->pev->netname));
 						}
